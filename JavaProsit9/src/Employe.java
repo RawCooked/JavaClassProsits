@@ -1,6 +1,6 @@
-public class Employe {
+public class Employe implements Comparable<Employe> {
 
-    int id;
+    Integer id;
     String nom;
     String prenom;
     String nomDep;
@@ -33,4 +33,17 @@ public class Employe {
         return false;
     }
 
+    @Override
+    public int compareTo(Employe e) {
+        return this.id.compareTo(e.id);
+    }
+
+
+    public String getNom_departement() {
+        return nomDep;
+    }
+
+    public int getGrade() {
+        return this.grade;
+    }
 }

@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class SocieteArrayList implements IGestion {
 
@@ -41,12 +43,14 @@ public class SocieteArrayList implements IGestion {
 
     ///TODO
     @Override
-    public void trierEmployeParId() {
-
+    public void trierEmployeParId() { //comparable
+        Collections.sort(this.employees);
     }
     ///TODO
     @Override
-    public void trierEmployeParNomDépartementEtGrade() {
+    public void trierEmployeParNomDépartementEtGrade() { //comparator
+        this.employees.sort(
 
+                Comparator.comparing(Employe::getNom_departement).thenComparing(Employe::getGrade));
     }
 }
